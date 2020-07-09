@@ -1,0 +1,11 @@
+
+# 测试文件夹
+/work/*
+/test/
+
+# 汇编留下的临时文件
+/tools/work/*.*
+!/tools/work/ASM.BAT
+# dosbox工作日志文件
+stderr.txt
+stdout.txt
