@@ -1,0 +1,9 @@
+{
+    "code-runner.runInTerminal":false,
+    "code-runner.executorMapByGlob": {
+    //for windows
+    // "*.{ASM,asm}":"$workspaceRoot\\tools\\ASMit.bat $fullFileName A $workspaceRoot\\tools $workspaceRoot\\tools\\work",
+    //for linux bash user
+    "*.{ASM,asm}":"$workspaceRoot/tools/asmit.sh $fullFileName -mA -d $workspaceRoot/tools"
+},
+}

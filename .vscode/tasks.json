@@ -1,0 +1,206 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ASM CurrentFile multifunctional",
+            "type": "shell",
+            "command": "${workspaceRoot}/tools/asmit.sh",
+            "args":[ 
+                "${file}",
+                "-m",
+                "${input:dosboxasm}",
+                "-d",
+                "${workspaceRoot}/tools",
+                "-w",
+                "${workspaceRoot}/tools/work",
+            ],
+            "windows":{
+                "command": "${workspaceRoot}\\tools\\ASMit.bat",
+                "args": [
+                    "${file}",
+                    "${input:dosboxasm}",
+                    "${workspaceRoot}\\tools",
+                    "${workspaceRoot}\\tools\\work",
+                    ],
+            },
+            "problemMatcher":[],
+            "presentation": {
+                "echo": true,
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "TASM CurrentFile",
+            "type": "shell",
+            "command": "${workspaceRoot}/tools/asmit.sh",
+            "args":[ 
+                "${file}",
+                "-m",
+                "C",
+                "-d",
+                "${workspaceRoot}/tools",
+                "-w",
+                "${workspaceRoot}/tools/work",
+            ],
+            "windows":{
+                "command": "${workspaceRoot}\\tools\\ASMit.bat",
+                "args": [
+                    "${file}",
+                    "C",
+                    "${workspaceRoot}\\tools",
+                    "${workspaceRoot}\\tools\\work",
+                    ],
+            },
+            "presentation": {
+                "reveal": "always",
+                "showReuseMessage": false, 
+            },
+            "problemMatcher":{
+                "owner": "TASM",
+                "fileLocation":"autoDetect",
+                "pattern": [
+                    {
+                        "regexp": "^ASMfilefrom:(.*)\\s*$",
+                        "file": 1,
+                      },
+                  {
+                    "regexp":"^\\s*\\*+(Error|Warning)\\*+\\s+.*\\((\\d+)\\)\\s+(.*)$",
+                    "line": 2,
+                    "severity": 1,
+                    "message": 3,
+                    "loop": true
+                  }
+                ]
+              },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "MASM CurrentFile",
+            "type": "shell",
+            "command": "${workspaceRoot}/tools/asmit.sh",
+            "args":[ 
+                "${file}",
+                "-m",
+                "D",
+                "-d",
+                "${workspaceRoot}/tools",
+                "-w",
+                "${workspaceRoot}/tools/work",
+            ],
+            "windows":{
+                "command": "${workspaceRoot}\\tools\\ASMit.bat",
+                "args": [
+                    "${file}",
+                    "D",
+                    "${workspaceRoot}\\tools",
+                    "${workspaceRoot}\\tools\\work",
+                    ],
+            },
+            "presentation": {
+                "reveal": "always",
+                "showReuseMessage": false, 
+            },
+            "problemMatcher":{
+                "owner": "MASM",
+                "fileLocation":"autoDetect",
+                "pattern": [
+                    {
+                        "regexp": "^ASMfilefrom:(.*)\\s*$",
+                        "file": 1,
+                      },
+                  {
+                    "regexp":"^\\s*.*\\((\\d+)\\):\\s+(error|warning)\\s+([A-Z]\\d+:\\s+.*)$",
+                    "line": 1,
+                    "severity": 2,
+                    "message": 3,
+                    "loop": true
+                  }
+                ]
+              },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+    ],
+    "inputs": [
+        {
+          "type": "pickString",
+          "id": "dosboxasm",
+          "description": "选择如何调用dosbox和tasm/masm",
+          "options": [
+            {
+                "label": "TASM在shell中输出，一些程序结果无法完全显示\t",
+                "value": "A",
+            }, 
+            {
+                "label": "MASM在shell中输出，一些程序结果无法完全显示\t",
+                "value": "B",
+            },
+            {
+                "label": "dosbox 将文件复制到测试文件夹中\t",
+                "value": "0",
+            },
+           
+            {
+                "label": "TASM在dosbox中运行，需要手动退出（输入exit，点x或Ctrl+F9）\t",
+                "value": "1",
+            },
+            {
+                "label": "TASM在dosbox中运行，需要手动退出（任意键退出）\t",
+                "value": "2",
+            },
+            {
+                "label": "TASM在dosbox中调试，汇编链接程序再调试\t",
+                "value": "3",
+            },
+            {
+                "label": "TD在dosbox中调试，直接启动调试程序\t",
+                "value": "4",
+            },
+           
+            {
+
+                "label": "MASM在dosbox中运行，需要手动退出（输入exit，点x或Ctrl+F9）\t",
+                "value": "5",
+            },
+            {
+
+                "label": "MASM在dosbox中运行，需要手动退出（任意键退出）\t",
+                "value": "6",
+            },
+            {
+                "label": "MASM在dosbox中调试，汇编链接程序再调试\t",
+                "value": "7",
+            },
+            
+            {
+                "label": "DEBUG在dosbox中调试，直接启动调试程序\t",
+                "value": "8",
+            },
+            {
+                "label": "TASM在shell中简化输出，一些程序结果无法完全显示\t",
+                "value": "C",
+            }, 
+            {
+                "label": "MASM在shell中简化输出，一些程序结果无法完全显示\t",
+                "value": "D",
+            },
+          ],
+          "default": "0"
+        },   
+    ],
+
+}
