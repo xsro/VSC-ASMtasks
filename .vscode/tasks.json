@@ -39,6 +39,42 @@
             },
         },
         {
+            "label": "Open Dosbox with TASM/MASM tools added to path",
+            "type": "shell",
+            "command": "${workspaceRoot}/tools/asmit.sh",
+            "args":[ 
+                "${file}",
+                "-m",
+                "0",
+                "-d",
+                "${workspaceRoot}/tools",
+                "-w",
+                "${workspaceRoot}/tools/work",
+            ],
+            "windows":{
+                "command": "${workspaceRoot}\\tools\\ASMit.bat",
+                "args": [
+                    "${file}",
+                    "0",
+                    "${workspaceRoot}\\tools",
+                    "${workspaceRoot}\\tools\\work",
+                    ],
+            },
+            "problemMatcher":[],
+            "presentation": {
+                "reveal": "never",
+                "echo": false,
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
             "label": "TASM CurrentFile",
             "type": "shell",
             "command": "${workspaceRoot}/tools/asmit.sh",

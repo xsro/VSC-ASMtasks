@@ -2,7 +2,7 @@
 
 [English](readme.md)
 
-一键编译运行MASM/TASM代码的VSCode自定义任务，目前可以在windows和linux中使用
+一键编译运行MASM/TASM代码的VSCode自定义任务，目前可以在windows和linux中使用。详见[release](https://gitee.com/chenliucx/CLTASM/releases)
 
 ## 主要功能
 
@@ -10,7 +10,7 @@
 
 #### 运行生成任务
 
-按下**Ctrl+Shift+B**或者点击**终端、运行生成任务**。MASM代码文件选择`MASM CurrentFile`、TASM代码文件选择`TASM　CurrentFile`。如果编译成功，将在终端中显示结果，编译有误，则会在终端显示结果的同时，标注问题
+按下**Ctrl+Shift+B**或者点击**终端、运行生成任务**。MASM代码文件选择`MASM CurrentFile`、TASM代码文件选择`TASM　CurrentFile`。如果编译成功，将在终端中显示结果；编译有误，则会在终端显示结果的同时，标注问题所在行。如果只是想要打开dosbox，可以点击`Open Dosbox with TASM/MASM tools added to path`，这样在dosbox中输入相关指令了。
 
 |编译成功|编译有误|
 |------|----------|
@@ -18,11 +18,11 @@
 
 #### 运行测试任务
 
-对于程序有特殊需求，比如调试，dosbox中直接输入命令，可以使用**运行测试任务**,windows使用Ctrl+Shift+P，然后输入Run Test Task即可打开。里面提供了多个功能
+对于程序有特殊需求，比如调试，dosbox中直接输入命令，可以使用**运行测试任务**,windows使用Ctrl+Shift+P，然后输入Run Test Task即可打开。里面提供了多个功能。
 
 #### 使用Code Runner插件
 
-如果安装了Code Runner插件可以，点击右上角三角形，或者使用**Ctrl+Alt+N**.相关设置位于[.vscode/settings.json](.vscode/settings.json)
+如果安装了Code Runner插件可以，点击右上角三角形，或者使用**Ctrl+Alt+N**.相关设置位于[.vscode/settings.json](.vscode/settings.json)。
 
 - 使用MASM，需要将A模式改成B
 - linux用户也需要进行修改，详见以下代码
@@ -44,17 +44,13 @@
 
 ## 如何开始
 
-克隆代码到工作文件夹即可
-
-## 具体方法
-
 1. 克隆仓库文件
+    - 直接到release中下载，解压到工作文件夹即可
     - 安装了Git可以使用如下命令 `cd yourfolder;git clone https://github.com/xsro/VSC-ASMtasks.git`
-    - 或者点击`code`,`download zip` 并解压到你的文件夹
 2. 使用VSCode打开文件夹[下载 VSCode](https://code.visualstudio.com/Download)
 3. 然后可以在文件夹里面愉快地写代码啦
 
-linux用户需要先安装dosbox，如使用`sudo apt install dosbox`等命令
+linux用户需要先安装dosbox，如使用`sudo apt install dosbox`等命令，并给脚本授权，如 `chmod u+x asmit.sh`。
 
 ## 总览
 
@@ -63,6 +59,9 @@ linux用户需要先安装dosbox，如使用`sudo apt install dosbox`等命令
 ## :file_folder:本代码库主要内容
 
 1. `.vscode`：为了在VSCode中实现汇编语言的编辑运行调试等工作增加的配置文件
+   1. extensions.json:推荐了几个插件
+   2. tasks.json:定义了几个任务
+   3. settings.json:主要是Code Runner的配置
 2. [tools](tools)文件夹
    1. dosbox:dosbox的windows程序，和扩大分辨率的配置文件
    2. TASM: 16位的TASM汇编工具，包括TASM.exe,Tlink.exe,td.exe等
