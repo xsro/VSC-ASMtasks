@@ -16,6 +16,8 @@
 |------|----------|
 |![RunBuildTasksSuccess](pics/RunBuildTestsuc.gif)|![RunBuildTasksError](pics/RunBuildTestsErr.gif)|
 
+![dosbox here](pics/RunBuildTestsbox.gif)
+
 #### 运行测试任务
 
 对于程序有特殊需求，比如调试，dosbox中直接输入命令，可以使用**运行测试任务**,windows使用Ctrl+Shift+P，然后输入Run Test Task即可打开。里面提供了多个功能。
@@ -79,6 +81,7 @@ linux用户需要先安装dosbox，如使用`sudo apt install dosbox`等命令�
 - 如何隐藏dosbox窗口
 - 如何在不同系统中更好地使用Code Runner
 - 如何适用到其他编辑器
+- 如何适用到OSX
 
 ### notepad++
 

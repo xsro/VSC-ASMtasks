@@ -2,7 +2,7 @@
 
 [CN](readme.zh.md)
 
-VSCode's terminal is very powerful while the process of run assembly file of TASM/MASM is a little bit  tedious. So I write some tasks and scrips to simplify the process.[Getting Start](#getting-start).Runable in both windows and windows. May be also support OSX
+VSCode's terminal is very powerful while the process of run assembly file of TASM/MASM is a little bit  tedious. So I write some tasks and scrips to simplify the process.[Getting Start](#getting-start).Runable in both windows and windows. May be also support OSX.[release](https://gitee.com/chenliucx/CLTASM/releases)
 
 ## :sweat_smile:Main Features
 
@@ -10,11 +10,15 @@ VSCode's terminal is very powerful while the process of run assembly file of TAS
 
 #### Run build tasks
 
-Use the *Run build Tasks* with **Ctrl+Shift+B** or click **Terminal->Run Build Tasks**,to run bulid tasks:`MASM CurrentFile` and `TASM　CurrentFile`.If so, you will see results in terminal or error messages in problem
+Use the *Run build Tasks* with **Ctrl+Shift+B** or click **Terminal->Run Build Tasks**,to run bulid tasks:`MASM CurrentFile` and `TASM CurrentFile`.If so, you will see results in terminal or error messages in problem
 
 |No problem|several problem|
 |------|----------|
 |![RunBuildTasksSuccess](pics/RunBuildTestsuc.gif)|![RunBuildTasksError](pics/RunBuildTestsErr.gif)|
+
+Also you can choose `Open Dosbox with TASM/MASM tools added to path` to open dosbox,add TASM and MASM tools to path and copy the current file as T.ASM.
+
+![dosbox here](pics/RunBuildTestsbox.gif)
 
 #### Run test task
 

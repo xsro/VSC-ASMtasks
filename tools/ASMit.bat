@@ -9,7 +9,6 @@ set "tool=%~dp0"
 set Print=0
 set "boxconf=-conf %tool%\dosbox\dosbox-0.74.conf"
     set "test=%tool%work\"
-    set "test=%4"
     if not exist %test% mkdir %test%
     set "dosbox=%tool%dosbox\DOSBox.exe"
     set mcd=-noautoexec ^
@@ -17,7 +16,8 @@ set "boxconf=-conf %tool%\dosbox\dosbox-0.74.conf"
     -c "d:"
         ::change value according to input
         if "%2" neq "" set "mode=%2"
-        if "%3" neq "" set "tool=%~f3"
+        if %3 neq "" set "tool=%~f3"
+        if %4 neq "" set "test=%~f4"
     if "%mode%" == "A" set Print=1
     if "%mode%" == "B" set Print=1
     if "%mode%" == "C" set Print=2
@@ -30,7 +30,7 @@ set "boxconf=-conf %tool%\dosbox\dosbox-0.74.conf"
     echo Mode:%mode% ASMtoolsfrom:%tool%
     echo ASMfilefrom:%file%
 :preDo
-cd %test%
+cd "%test%"
     :ModeSelect
         if %mode%==4 goto core
         if %mode%==8 goto core
@@ -43,7 +43,7 @@ cd %test%
         if exist T.ASM del T.ASM
         copy "%file%" T.ASM>nul
         :core
-        start/min/wait %dosbox% %mcd% %boxconf% -c "asm/m %mode%"
+        start/min/wait "" "%dosbox%" %mcd% %boxconf% -c "asm/m %mode%"
             if "%Print%" == "1" goto print1
             if "%Print%" == "2" goto print2
             goto end
