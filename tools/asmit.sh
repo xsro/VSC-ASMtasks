@@ -1,9 +1,9 @@
 # !/bin/bash
 # this is a script for use dosbox to run TASM/MASM tools
 # set value
-tool="$(dirname $0)/"
+tool="$(dirname "$0")"
 test="${tool}/work"
-bigboxconf="-conf \"$tool/dosbox/bigbox.conf\""
+boxconf="$tool/dosbox/dosbox-0.74.conf"
 mode='C'
 print=0
 # check whether installed dosbox
@@ -54,16 +54,16 @@ then
         case "$opt" in
             m) mode=$OPTARG;;
             d) tool=$OPTARG
-             if [ -d ${tool} ];
+             if [ -d "${tool}" ]
              then
                 echo Your directory concludes
-                ls ${tool}
+                ls "${tool}"
              else
                 echo invalid ${tool} not a readable directory
                 exit 
                 fi;;
             w) test=$OPTARG
-             if [ -d ${test} ];
+             if [ -d "${test}" ];
              then
                 echo Your directory concludes
                 ls ${test}
@@ -74,16 +74,14 @@ then
             *) echo "unknown option: $opt";;
         esac
     done
-    echo $mode
-    if [ "${mode}" = A ] || [ "${mode}" = B ]
-    then
-    bigboxconf=""
-    print=1
-    elif [ "${mode}" = C ] || [ "${mode}" = D ]
-    then
-    bigboxconf=""
-    print=2
-    fi
+        if [ "${mode}" = A ] || [ "${mode}" = B ];then
+        print=1
+        elif [ "${mode}" = C ] || [ "${mode}" = D ];then
+        print=2
+        fi
+        if [ "$print" = 0 ];then
+            boxconf="$tool/dosbox/bigbox.conf"
+        fi
     # output infomation
     echo !Msg:  ASMtoolsfrom:$(pwd)
     echo !Msg:  ASMfilefrom:$file
@@ -101,14 +99,14 @@ then
             fi
         fi
         # copy file to test
-        ls ${test} || mkdir ${test} && rm ${test}/T.*
+        ls "${test}" || mkdir "${test}" && rm "${test}/T.*"
         echo removed
-        cp "$file" ${test}/T.ASM
+        cp "$file" "${test}/T.ASM"
         # echo deleted temp files 
     fi
     # do the operation
-        cd ${test}
-        dosbox "${bigboxconf}" -noautoexec\
+        cd "${test}"
+        dosbox -conf "${boxconf}" -noautoexec\
         -c "mount c \"$tool\"" -c "mount d \"$test\""\
         -c "d:"\
         -c "asm/m ${mode}"
