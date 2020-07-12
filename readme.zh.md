@@ -1,11 +1,12 @@
-# VSCode一键运行MASM/TASM代码的自定义任务
+# VSCode一键调用DOSBox运行MASM/TASM代码的自定义任务
 
 [English](readme.md)|[github仓库](https://github.com/xsro/VSC-ASMtasks)|[gitee仓库](https://gitee.com/chenliucx/VSC-ASMtasks)|[release](https://gitee.com/chenliucx/VSC-ASMtasks/releases)
 
-调用dosbox模拟16位系统实现，一键编译运行MASM/TASM代码的VSCode自定义任务。已经包含需要的工具集，和windows下的dosbox软件。这意味着windows下只有安装了VSCode并下载本仓库内容就可以实现一键编译运行了。
+通过配置VSCode的自定义任务来实现调用dosbox模拟16位系统实现，一键编译运行MASM/TASM代码的VSCode。已经包含需要的MASM/TASM工具集和windows下的dosbox软件。这意味着windows下只要安装了VSCode并克隆本仓库就可以实现一键编译运行等功能了。
 
-- [主要功能](#主要功能)
-- [如何开始](#如何开始)
+- [本仓库的主要功能](#主要功能)
+- [如何开始使用本仓库](#如何开始)
+- [本仓库的文件结构](#file_folder本代码库主要内容)
 - [参考链接](#point_right参考链接)
 - [工作原理](doc/how-it-work.md)
 
