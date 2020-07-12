@@ -84,6 +84,8 @@ linux用户需要先安装dosbox，如使用`sudo apt install dosbox`等命令�
 
 ### :sparkling_heart:代码规范与协作
 
+还有很多问题没有解决，欢迎发issue和PR。
+
 - markdown文件使用vscode的markdownlint规范
 - ASM文件还没有找到好用的规范
 - 如何隐藏dosbox窗口

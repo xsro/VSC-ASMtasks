@@ -1,6 +1,6 @@
 # VSCode custom Tasks for Run TASM/MASM code in DOSBox
 
-[中文](readme.zh.md)|[github](https://github.com/xsro/VSC-ASMtasks)|[gitee](https://gitee.com/chenliucx/CLTASM)|[how it works](doc/how-it-work.md)|[release and download](https://github.com/xsro/VSC-ASMtasks/releases)
+[中文](readme.zh.md)|[github](https://github.com/xsro/VSC-ASMtasks)|[gitee](https://gitee.com/chenliucx/VSC-ASMtasks)|[how it works](doc/how-it-work.md)|[release and download](https://github.com/xsro/VSC-ASMtasks/releases)
 
 VSCode's terminal is very powerful while the process of run assembly file of TASM/MASM is a little bit  tedious. So I write some tasks and scrips to simplify the process.Here are some features.Runable in both windows and linux. May be also support OSX. [Getting Start](#getting-start).Click [use this template](https://github.com/xsro/VSC-ASMtasks/generate) to use this template.
 
@@ -72,7 +72,7 @@ To use Code Runner ,Please refer to [with Code Runner](#with-code-runner)
 
 ## Overview
 
-When I study the course <principles& peripheral technology of microprocessor>, I need to study some knowledge about assembly,but those assembly tools(TASM and MASM) runs in 16 bits microprocessor system which is not supported by most computers today. We use **DOSBox** to emulate the 16-bit environment, but DOSBox is designed for games,it is a little unfriendly for coding. So I write some **VSCode** settings and tasks to run the **TASM** assembly.Hope helpful for you:smiley:
+When I study the NJUPT's course <principles& peripheral technology of microprocessor>, I need to study some knowledge about assembly,but those assembly tools(TASM and MASM) runs in 16 bits microprocessor system which is not supported by most computers today. We use **DOSBox** to emulate the 16-bit environment, but DOSBox is designed for games,it is a little unfriendly for coding. So I write some **VSCode** settings and tasks to run the **TASM** assembly.Hope helpful for you:smiley:
 
 ### :file_folder:Content
 
@@ -88,6 +88,8 @@ When I study the course <principles& peripheral technology of microprocessor>, I
 4. hello masm.ASM: A basic MASM code file
 
 ### :raising_hand:Need your help
+
+Welcome to send issue or pull request
 
 - The dosbox windows is a little bit disturbing. Is there any way to hide it?
 - The Code Runner settings is needed to be modified when switching between different OSs.Is there a way to simplify?
