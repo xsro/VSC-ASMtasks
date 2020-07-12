@@ -1,8 +1,8 @@
 # VSCode custom Tasks for Run TASM/MASM code in DOSBox
 
-[中文](readme.zh.md)|[github](https://github.com/xsro/VSC-ASMtasks)|[more in gitee](https://gitee.com/chenliucx/CLTASM)|[how it works](doc/how-it-work.md)|[release and download](https://gitee.com/chenliucx/CLTASM/releases)
+[中文](readme.zh.md)|[github](https://github.com/xsro/VSC-ASMtasks)|[gitee](https://gitee.com/chenliucx/CLTASM)|[how it works](doc/how-it-work.md)|[release and download](https://github.com/xsro/VSC-ASMtasks/releases)
 
-VSCode's terminal is very powerful while the process of run assembly file of TASM/MASM is a little bit  tedious. So I write some tasks and scrips to simplify the process.Here are some features.Runable in both windows and linux. May be also support OSX. [Getting Start](#getting-start).
+VSCode's terminal is very powerful while the process of run assembly file of TASM/MASM is a little bit  tedious. So I write some tasks and scrips to simplify the process.Here are some features.Runable in both windows and linux. May be also support OSX. [Getting Start](#getting-start).Click [use this template](https://github.com/xsro/VSC-ASMtasks/generate) to use this template.
 
 ## :sweat_smile:Main Features
 
@@ -54,6 +54,8 @@ if installed the vscode extension *code runner*, we can run TASM with a click or
 ## How to use
 
 ### Getting Start
+
+Recommend click [use this template](https://github.com/xsro/VSC-ASMtasks/generate) to build your repository using the current file structure.
 
 1. Clone the repository to your folder
    - download release from [here](https://gitee.com/chenliucx/CLTASM/releases)

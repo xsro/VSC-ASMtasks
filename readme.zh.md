@@ -1,14 +1,13 @@
 # VSCode一键运行MASM/TASM代码的自定义任务
 
-[English](readme.md)|[github仓库](https://github.com/xsro/VSC-ASMtasks)|[gitee仓库](https://gitee.com/chenliucx/CLTASM)|
+[English](readme.md)|[github仓库](https://github.com/xsro/VSC-ASMtasks)|[gitee仓库](https://gitee.com/chenliucx/VSC-ASMtasks)|[release](https://gitee.com/chenliucx/VSC-ASMtasks/releases)
 
-一键编译运行MASM/TASM代码的VSCode自定义任务，目前可以在windows和linux中使用。
+调用dosbox模拟16位系统实现，一键编译运行MASM/TASM代码的VSCode自定义任务。已经包含需要的工具集，和windows下的dosbox软件。这意味着windows下只有安装了VSCode并下载本仓库内容就可以实现一键编译运行了。
 
 - [主要功能](#主要功能)
 - [如何开始](#如何开始)
 - [参考链接](#point_right参考链接)
 - [工作原理](doc/how-it-work.md)
-- [打包下载](https://gitee.com/chenliucx/CLTASM/releases)
 
 ## 主要功能
 
@@ -28,7 +27,7 @@
 
 #### 运行测试任务
 
-对于程序有特殊需求，比如调试，dosbox中直接输入命令，可以使用**运行测试任务**,windows使用Ctrl+Shift+P，然后输入Run Test Task即可打开。里面提供了多个功能。
+对于程序有特殊需求，比如调试，dosbox中直接输入命令，可以使用**运行测试任务**,windows使用Ctrl+Shift+P，然后输入Run Test Task即可打开。里面提供了多个功能。也可以将他设置为默认生成任务，点击`终端、配置默认生成任务`选择
 
 #### 使用Code Runner插件
 
@@ -60,11 +59,11 @@
 2. 使用VSCode打开文件夹，[下载 VSCode](https://code.visualstudio.com/Download)
 3. 然后可以在文件夹里面愉快地写代码啦
 
-linux用户需要先安装dosbox，如使用`sudo apt install dosbox`等命令，并给脚本授权，如 `chmod u+x asmit.sh`。
+linux用户需要先安装dosbox，如使用`sudo apt install dosbox`等命令，并给脚本授权，如 `chmod u+x asmit.sh`。[github仓库](https://github.com/xsro/VSC-ASMtasks)用户可以使用该仓库作为模板创建仓库，点击`use this template`
 
 ## 总览
 
-学习《微型计算机原理与接口技术》的时候正好刚刚接触了git和VSCode，苦于DOSBox的“专注于游戏”，编辑代码种种不爽。所以尝试通过脚本和**VSCode**的终端任务来简化编译过程，实现**一键编译运行ASM文件**:smiley:
+学习南邮《微型计算机原理与接口技术》的时候正好刚刚接触了git和VSCode，苦于DOSBox的“专注于游戏”，编辑代码种种不爽。所以尝试通过脚本和**VSCode**的终端任务来简化编译过程，实现**一键编译运行ASM文件**:smiley:
 
 ## :file_folder:本代码库主要内容
 
