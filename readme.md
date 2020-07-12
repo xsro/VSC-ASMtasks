@@ -1,8 +1,8 @@
 # VSCode custom Tasks for Run TASM/MASM code in DOSBox
 
-[CN](readme.zh.md)
+[中文](readme.zh.md)|[github](https://github.com/xsro/VSC-ASMtasks)|[more in gitee](https://gitee.com/chenliucx/CLTASM)|[how it works](doc/how-it-work.md)|[release and download](https://gitee.com/chenliucx/CLTASM/releases)
 
-VSCode's terminal is very powerful while the process of run assembly file of TASM/MASM is a little bit  tedious. So I write some tasks and scrips to simplify the process.[Getting Start](#getting-start).Runable in both windows and windows. May be also support OSX.[release](https://gitee.com/chenliucx/CLTASM/releases)
+VSCode's terminal is very powerful while the process of run assembly file of TASM/MASM is a little bit  tedious. So I write some tasks and scrips to simplify the process.Here are some features.Runable in both windows and linux. May be also support OSX. [Getting Start](#getting-start).
 
 ## :sweat_smile:Main Features
 
@@ -11,6 +11,8 @@ VSCode's terminal is very powerful while the process of run assembly file of TAS
 #### Run build tasks
 
 Use the *Run build Tasks* with **Ctrl+Shift+B** or click **Terminal->Run Build Tasks**,to run bulid tasks:`MASM CurrentFile` and `TASM CurrentFile`.If so, you will see results in terminal or error messages in problem
+
+For example, A TASM code [hello tasm.ASM](hello%20tasm.ASM) can be successfully compiled witch TASM while if use MASM, it will ouput error messages.
 
 |No problem|several problem|
 |------|----------|

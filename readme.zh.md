@@ -1,8 +1,14 @@
 # VSCode一键运行MASM/TASM代码的自定义任务
 
-[English](readme.md)
+[English](readme.md)|[github仓库](https://github.com/xsro/VSC-ASMtasks)|[gitee仓库](https://gitee.com/chenliucx/CLTASM)|
 
-一键编译运行MASM/TASM代码的VSCode自定义任务，目前可以在windows和linux中使用。详见[release](https://gitee.com/chenliucx/CLTASM/releases)
+一键编译运行MASM/TASM代码的VSCode自定义任务，目前可以在windows和linux中使用。
+
+- [主要功能](#主要功能)
+- [如何开始](#如何开始)
+- [参考链接](#point_right参考链接)
+- [工作原理](doc/how-it-work.md)
+- [打包下载](https://gitee.com/chenliucx/CLTASM/releases)
 
 ## 主要功能
 
@@ -11,6 +17,8 @@
 #### 运行生成任务
 
 按下**Ctrl+Shift+B**或者点击**终端、运行生成任务**。MASM代码文件选择`MASM CurrentFile`、TASM代码文件选择`TASM　CurrentFile`。如果编译成功，将在终端中显示结果；编译有误，则会在终端显示结果的同时，标注问题所在行。如果只是想要打开dosbox，可以点击`Open Dosbox with TASM/MASM tools added to path`，这样在dosbox中输入相关指令了。
+
+例如一个简单的TASM代码`hello tasm`在tasm中汇编可以成功实现，在masm中汇编就会报错。如下图
 
 |编译成功|编译有误|
 |------|----------|
@@ -31,13 +39,13 @@
 
 ```json
 "code-runner.executorMapByGlob": {
-    //for windows using TASM
+    //windows用户使用TASM
     "*.{ASM,asm}":"$workspaceRoot\\tools\\ASMit.bat $fullFileName A $workspaceRoot\\tools $workspaceRoot\\tools\\work",
-    //for linux using TASM
+    //linux用户使用TASM
     "*.{ASM,asm}":"$workspaceRoot/tools/asmit.sh $fullFileName -mA -d $workspaceRoot/tools"
-    //for windows using MASM
+    //windows用户使用MASM
     "*.{ASM,asm}":"$workspaceRoot\\tools\\ASMit.bat $fullFileName B $workspaceRoot\\tools $workspaceRoot\\tools\\work",
-    //for linux using MASM
+    //linux用户使用MASM
     "*.{ASM,asm}":"$workspaceRoot/tools/asmit.sh $fullFileName -mB -d $workspaceRoot/tools"
 },
 ```
@@ -49,7 +57,7 @@
 1. 克隆仓库文件
     - 直接到release中下载，解压到工作文件夹即可
     - 安装了Git可以使用如下命令 `cd yourfolder;git clone https://github.com/xsro/VSC-ASMtasks.git`
-2. 使用VSCode打开文件夹[下载 VSCode](https://code.visualstudio.com/Download)
+2. 使用VSCode打开文件夹，[下载 VSCode](https://code.visualstudio.com/Download)
 3. 然后可以在文件夹里面愉快地写代码啦
 
 linux用户需要先安装dosbox，如使用`sudo apt install dosbox`等命令，并给脚本授权，如 `chmod u+x asmit.sh`。

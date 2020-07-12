@@ -4,11 +4,23 @@
 
 调用dosbox来实现模拟TASM/MASM所需要的16位环境，利用shell的参数来实现与dosbox交互。
 
+```mermaid
+sequenceDiagram
+    participant VSCode
+    participant shell
+    participant DOSBox
+    VSCode->>shell: Terminal Tasks<br>(tasks.json)<br>Code Runner <br>(settings.json)
+    opt use scripts ASMit.bat/asmit.sh
+         shell ->>DOSBox:DOSBox Command Line Parameters
+         DOSBox->>shell:output redirect
+    end  
+```
+
 ## 详细操作步骤
 
-0. tasks.json和Code Runner调用脚本文件实现相关功能
-1. 将需要使用的文件（VSCode当前文件）复制到工作文件夹`tools/work`
-2. 调用dosbox来进行操作
+0. tasks.json和Code Runner调用脚本文件实现相关功能,向脚本传递操作代号、汇编工具目录、执行目录
+1. ASMit.bat/asmit.sh将需要使用的文件（VSCode当前文件）复制到工作文件夹`tools/work`
+2. ASMit.bat/asmit.sh调用dosbox来进行操作
    1. 使用合适的dosbox配置文件，主要是调整窗口大小
    2. 将汇编工具`tools`挂载到dosbox中的C盘
    3. 工作文件夹`tools/work`挂载到D盘，并切换到d盘
@@ -45,3 +57,5 @@ asm.bat文件有三个参数，第一个为m或者t表示使用masm还是tasm，
 |B| 使用masm|汇编、链接、运行| 结果重定向到文件 并简要显示|
 |C| 使用tasm|汇编、链接、运行| 结果重定向到文件 并显示|
 |D| 使用masm|汇编、链接、运行| 结果重定向到文件 并简要显示|
+
+可以在测试任务中调用以上功能
