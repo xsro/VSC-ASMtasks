@@ -14,6 +14,7 @@ if "%1" == "/m" goto Mode
     if "%1" == "t" goto tasm
     if "%1" == "m" goto masm
     if "%1" == "0"  set path=%path%;c:\tasm;c:\masm
+    if "%1" == "0"  copy c:\tasm\tdc2.td tdconfig.td
     goto end
 
 echo invalid tool %2
@@ -53,13 +54,13 @@ set path=%path%;c:\masm
     if "%2" == "d" goto debug
     masm T.ASM;
     if exist T.obj link T;
-    if "%2" == rd goto debug
+    if "%2" == "rd" goto debug
     if exist T.exe T
     if "%2" == "rp" pause
     goto end
     :debug
     if not exist T.EXE pause
-        debug t
+        debug t.exe
         goto end
     :mrr
         masm T.ASM;>T.txt

@@ -14,21 +14,25 @@
 
 ### 终端任务
 
-#### 运行生成任务
+#### 运行默认生成任务
 
-按下**Ctrl+Shift+B**或者点击**终端、运行生成任务**。MASM代码文件选择`MASM CurrentFile`、TASM代码文件选择`TASM　CurrentFile`。如果编译成功，将在终端中显示结果；编译有误，则会在终端显示结果的同时，标注问题所在行。如果只是想要打开dosbox，可以点击`Open Dosbox with TASM/MASM tools added to path`，这样在dosbox中输入相关指令了。
+按下**Ctrl+Shift+B**或者点击**终端、运行生成任务**。会提供以下四个选项。
 
-例如一个简单的TASM代码`hello tasm`在tasm中汇编可以成功实现，在masm中汇编就会报错。如下图
+1. Open DOSBox  打开dosbox(并自动配置好环境)
+2. TASM CurrentFile使用TASM来编译运行当前文件
+3. MASM CurrentFile使用MASM来编译运行当前文件
+4. ASM CurrentFile 自定义操作当前文件
 
-|编译成功|编译有误|
+MASM代码文件选择`MASM CurrentFile`、TASM代码文件选择`TASM　CurrentFile`。如果编译成功，将在终端中显示结果；编译有误，则会在终端显示结果的同时，标注问题所在行。如果只是想要打开dosbox，可以点击`Open Dosbox with TASM/MASM tools added to path`，这样在dosbox中输入相关指令了。对于程序有特殊需求，比如调试等，点击`ASM CurrentFile`会有多种选择
+
+例如一个简单的TASM代码[hello tasm](hello%20tasm.ASM)在tasm中汇编可以成功实现，在masm中汇编就会报错。如下图所示
+
+|使用TASM编译成功|使用MASM会报错|
 |------|----------|
 |![RunBuildTasksSuccess](pics/RunBuildTestsuc.gif)|![RunBuildTasksError](pics/RunBuildTestsErr.gif)|
 
-![dosbox here](pics/RunBuildTestsbox.gif)
-
-#### 运行测试任务
-
-对于程序有特殊需求，比如调试，dosbox中直接输入命令，可以使用**运行测试任务**,windows使用Ctrl+Shift+P，然后输入Run Test Task即可打开。里面提供了多个功能。也可以将他设置为默认生成任务，点击`终端、配置默认生成任务`选择
+|打开DOSBox后手动输入命令|使用自定义的其他选项来操作文件|
+|![dosbox here](pics/RunBuildTestsbox.gif)|
 
 #### 使用Code Runner插件
 

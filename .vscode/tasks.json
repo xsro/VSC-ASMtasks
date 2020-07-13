@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "ASM CurrentFile multifunctional",
+            "label": "ASM CurrentFile \t自定义操作当前文件",
             "type": "shell",
             "command": "${workspaceRoot}/tools/asmit.sh",
             "args":[ 
@@ -34,12 +34,12 @@
                 "clear": false
             },
             "group": {
-                "kind": "test",
+                "kind": "build",
                 "isDefault": true
             },
         },
         {
-            "label": "Open Dosbox with TASM/MASM tools added to path",
+            "label": "Open DOSBox  \t打开dosbox(并自动配置好环境)",
             "type": "shell",
             "command": "${workspaceRoot}/tools/asmit.sh",
             "args":[ 
@@ -75,7 +75,7 @@
             },
         },
         {
-            "label": "TASM CurrentFile",
+            "label": "TASM CurrentFile\t使用TASM来编译运行当前文件",
             "type": "shell",
             "command": "${workspaceRoot}/tools/asmit.sh",
             "args":[ 
@@ -123,7 +123,7 @@
             },
         },
         {
-            "label": "MASM CurrentFile",
+            "label": "MASM CurrentFile\t使用MASM来编译运行当前文件",
             "type": "shell",
             "command": "${workspaceRoot}/tools/asmit.sh",
             "args":[ 
@@ -178,15 +178,7 @@
           "description": "选择如何调用dosbox和tasm/masm",
           "options": [
             {
-                "label": "TASM在shell中输出，一些程序结果无法完全显示\t",
-                "value": "A",
-            }, 
-            {
-                "label": "MASM在shell中输出，一些程序结果无法完全显示\t",
-                "value": "B",
-            },
-            {
-                "label": "dosbox 将文件复制到测试文件夹中\t",
+                "label": "dosbox it\t",
                 "value": "0",
             },
            
@@ -227,12 +219,12 @@
                 "value": "8",
             },
             {
-                "label": "TASM在shell中简化输出，一些程序结果无法完全显示\t",
-                "value": "C",
+                "label": "TASM在shell中输出，一些程序结果无法完全显示\t",
+                "value": "A",
             }, 
             {
-                "label": "MASM在shell中简化输出，一些程序结果无法完全显示\t",
-                "value": "D",
+                "label": "MASM在shell中输出，一些程序结果无法完全显示\t",
+                "value": "B",
             },
           ],
           "default": "0"
