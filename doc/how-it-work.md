@@ -7,13 +7,14 @@
 ```mermaid
 sequenceDiagram
     participant VSCode
-    participant shell
+    participant Terminal
     participant DOSBox
-    VSCode->>shell: Terminal Tasks<br>(tasks.json)<br>Code Runner <br>(settings.json)
+    VSCode->>Terminal: Terminal Tasks<br>(tasks.json)<br>Code Runner <br>(settings.json)
     opt use scripts ASMit.bat/asmit.sh
-         shell ->>DOSBox:DOSBox Command Line Parameters
-         DOSBox->>shell:output redirect
-    end  
+         Terminal ->>DOSBox:DOSBox Command Line Parameters
+         DOSBox->>Terminal:output redirect
+    end
+    Terminal->>VSCode:Problem matcher
 ```
 
 ## 详细操作步骤
@@ -41,6 +42,8 @@ asm.bat文件有三个参数，第一个为m或者t表示使用masm还是tasm，
 |rp|run and pause|run的基础上再pause一下|
 |rd|run and debug|run的基础上再调试程序|
 |d |directly debug|不进行汇编链接直接调试|
+
+使用一下字符在VSCode、Terminal和dosbox中沟通
 
 |模块|使用工具|操作|附加操作|
 |---|---|---|---|

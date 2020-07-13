@@ -8,7 +8,7 @@
 - [如何开始使用本仓库](#如何开始)
 - [本仓库的文件结构](#file_folder本代码库主要内容)
 - [参考链接](#point_right参考链接)
-- [工作原理](doc/how-it-work.md)
+- [工作原理和主要功能表](doc/how-it-work.md)
 
 ## 主要功能
 
@@ -16,12 +16,12 @@
 
 #### 运行默认生成任务
 
-按下**Ctrl+Shift+B**或者点击**终端、运行生成任务**。会提供以下四个选项。
+按下**Ctrl+Shift+B**或者点击**终端、运行生成任务**。会提供以下四个选项。可以通过修改[tasks.json](.vscode/tasks.json)增加热键、修改功能，重新分组等等。
 
 1. Open DOSBox  打开dosbox(并自动配置好环境)
 2. TASM CurrentFile使用TASM来编译运行当前文件
 3. MASM CurrentFile使用MASM来编译运行当前文件
-4. ASM CurrentFile 自定义操作当前文件
+4. ASM CurrentFile 更多操作当前文件的选项，如调试等
 
 MASM代码文件选择`MASM CurrentFile`、TASM代码文件选择`TASM　CurrentFile`。如果编译成功，将在终端中显示结果；编译有误，则会在终端显示结果的同时，标注问题所在行。如果只是想要打开dosbox，可以点击`Open Dosbox with TASM/MASM tools added to path`，这样在dosbox中输入相关指令了。对于程序有特殊需求，比如调试等，点击`ASM CurrentFile`会有多种选择
 
@@ -31,8 +31,9 @@ MASM代码文件选择`MASM CurrentFile`、TASM代码文件选择`TASM　Current
 |------|----------|
 |![RunBuildTasksSuccess](pics/RunBuildTestsuc.gif)|![RunBuildTasksError](pics/RunBuildTestsErr.gif)|
 
-|打开DOSBox后手动输入命令|使用自定义的其他选项来操作文件|
-|![dosbox here](pics/RunBuildTestsbox.gif)|
+|打开DOSBox后手动输入命令调试|使用选项7来操作|
+|----|---|
+|![dosbox here](pics/Runtasks0.gif)|![7](pics/Runtasks7.gif)|
 
 #### 使用Code Runner插件
 
@@ -60,7 +61,7 @@ MASM代码文件选择`MASM CurrentFile`、TASM代码文件选择`TASM　Current
 
 1. 克隆仓库文件
     - 直接到release中下载，解压到工作文件夹即可
-    - 安装了Git可以使用如下命令 `cd yourfolder;git clone https://github.com/xsro/VSC-ASMtasks.git`
+    - 安装了Git可以直接克隆
 2. 使用VSCode打开文件夹，[下载 VSCode](https://code.visualstudio.com/Download)
 3. 然后可以在文件夹里面愉快地写代码啦
 

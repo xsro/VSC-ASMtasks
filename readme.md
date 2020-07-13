@@ -1,33 +1,29 @@
-# VSCode custom Tasks for Run TASM/MASM code in DOSBox
+# VSCode template for MASM/TASM via DOSBox
 
 [中文](readme.zh.md)|[github](https://github.com/xsro/VSC-ASMtasks)|[gitee](https://gitee.com/chenliucx/VSC-ASMtasks)|[how it works](doc/how-it-work.md)|[release and download](https://github.com/xsro/VSC-ASMtasks/releases)
 
-VSCode's terminal is very powerful while the process of run assembly file of TASM/MASM is a little bit  tedious. So I write some tasks and scrips to simplify the process.Here are some features.Runable in both windows and linux. May be also support OSX. [Getting Start](#getting-start).Click [use this template](https://github.com/xsro/VSC-ASMtasks/generate) to use this template.
+Through the use of scripts and terminal tasks, this repo is suitable for you to code TASM/MASM in VSCode with a relatively convenient way to run and debug. Here are some features.Runable in both windows and linux. May be also support OSX. [Getting Start](#getting-start).Click [use this template](https://github.com/xsro/VSC-ASMtasks/generate) to use this template.
 
 ## :sweat_smile:Main Features
 
 ### Terminal Tasks
 
-#### Run build tasks
+Use the *Run build Tasks* with **Ctrl+Shift+B** or click **Terminal->Run Build Tasks** to run termianl tasks.You can also change the [tasks.json](.vscode/tasks.json) to make it to your taste like set hotkey, choose group and so on.
 
-Use the *Run build Tasks* with **Ctrl+Shift+B** or click **Terminal->Run Build Tasks**,to run bulid tasks:`MASM CurrentFile` and `TASM CurrentFile`.If so, you will see results in terminal or error messages in problem
+- `Open DOSBox`:open DOSBox(copy currentfile to dosbox's D: set path for TASM and MASM)
+- `MASM CurrentFile`:compile and run your code using MASM in dosbox
+- `TASM CurrentFile`:compile and run your code using TASM in dosbox
+- `ASM CurrentFile`:offering many selection for you to run or debug
 
-For example, A TASM code [hello tasm.ASM](hello%20tasm.ASM) can be successfully compiled witch TASM while if use MASM, it will ouput error messages.
+For example, A TASM code [hello tasm.ASM](hello%20tasm.ASM) can be successfully compiled with TASM while if use MASM, it will ouput error messages like:
 
-|No problem|several problem|
+|Using TASM No problem|Using MASM several errors|
 |------|----------|
 |![RunBuildTasksSuccess](pics/RunBuildTestsuc.gif)|![RunBuildTasksError](pics/RunBuildTestsErr.gif)|
 
-Also you can choose `Open Dosbox with TASM/MASM tools added to path` to open dosbox,add TASM and MASM tools to path and copy the current file as T.ASM.
-
-![dosbox here](pics/RunBuildTestsbox.gif)
-
-#### Run test task
-
-For more function,you can run test tasks.Press `Ctrl + Shift + P`?MacOS Command + Shift + P?to bring up Command Panel.
-Type > Run Test Task into Command Panel.
-
-![vscode tasks](pics/RunTestTasks.gif)|
+|using `Open DOSBox`|using `ASM CurrentFile`|
+|----|---|
+|![dosbox here](pics/Runtasks0.gif)|![7](pics/Runtasks7.gif)|
 
 ### with **Code Runner**
 
@@ -97,7 +93,8 @@ Welcome to send issue or pull request
 
 ## Find more
 
-Maybe [gitee](https://gitee.com/chenliucx/CLTASM) is helpful to you,which has some codes of TASM,notes about <principles& peripheral technology of microprocessor>.
+Maybe [gitee](https://gitee.com/chenliucx/CLTASM) is helpful to you,which has some codes of TASM and notes about <principles& peripheral technology of microprocessor>.
+[masm-code](https://github.com/Woodykaixa/masm-code) is an extension for MASM in DOSBox
 
 ### notepad++ Users
 
