@@ -109,10 +109,10 @@
                         "file": 1,
                       },
                   {
-                    "regexp":"^\\s*\\*+(Error|Warning)\\*+\\s+.*\\((\\d+)\\)\\s+(.*)$",
-                    "line": 2,
+                    "regexp":"^\\s*\\*+(Error|Warning)\\*+\\s+(.*)\\((\\d+)\\)\\s+(.*)$",
+                    "line": 3,
                     "severity": 1,
-                    "message": 3,
+                    "message": 4,
                     "loop": true
                   }
                 ]
@@ -157,10 +157,10 @@
                         "file": 1,
                       },
                   {
-                    "regexp":"^\\s*.*\\((\\d+)\\):\\s+(error|warning)\\s+([A-Z]\\d+:\\s+.*)$",
-                    "line": 1,
-                    "severity": 2,
-                    "message": 3,
+                    "regexp":"^\\s*(.*)\\((\\d+)\\):\\s+(error|warning)\\s+([A-Z]\\d+:\\s+.*)$",
+                    "line": 2,
+                    "severity": 3,
+                    "message": 4,
                     "loop": true
                   }
                 ]
