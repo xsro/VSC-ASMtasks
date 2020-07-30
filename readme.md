@@ -1,6 +1,6 @@
 # VSCode template for MASM/TASM via DOSBox
 
-[中文](readme.zh.md)|[github](https://github.com/xsro/VSC-ASMtasks)|[gitee](https://gitee.com/chenliucx/VSC-ASMtasks)|[how it works](doc/how-it-work.md)|[release and download](https://github.com/xsro/VSC-ASMtasks/releases)
+[中文](readme.zh.md)|[github](https://github.com/xsro/VSC-ASMtasks)|[how it works](doc/how-it-work.md)|[release and download](https://github.com/xsro/VSC-ASMtasks/releases)
 
 Through the use of scripts and terminal tasks, this repo is suitable for you to code TASM/MASM in VSCode with a relatively convenient way to run and debug. Here are some features.Runable in both windows and linux. May be also support OSX. [Getting Start](#getting-start).Click [use this template](https://github.com/xsro/VSC-ASMtasks/generate) to use this template.
 
